@@ -1,0 +1,15 @@
+export const mastersMenu = [
+  { name: "Material Master", key: "Material Master" },
+  { name: "Returnables Master", key: "Returnables Master" },
+  { name: "Steel Specs", key: "Steel Specs" },
+  { name: "Vendor Master", key: "Vendor Master" },
+  { name: "Project Master", key: "Project Master" },
+  { name: "Yard Master", key: "Yard Master" },
+  { name: "Units", key: "Units" },
+  { name: "Zone Rules", key: "Zone Rules" },
+  { name: "Users & Roles", key: "Users & Roles" },
+  { name: "Approval Workflows", key: "Approval Workflows" },
+  { name: "Tolerances", key: "Tolerances" },
+  { name: "Alerts", key: "Alerts" },
+  { name: "Integrations", key: "Integrations" },
+];
