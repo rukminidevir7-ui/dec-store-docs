@@ -46,36 +46,54 @@ export default function Home() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const doc = activeSection === "Dashboard" ? dashboardDocs[activeKey as keyof typeof dashboardDocs] : null;
-  const inwardDoc = activeSection === "Inward" ? inwardDocs[activeKey as keyof typeof inwardDocs] : null;
-  const outwardDoc = activeSection === "Outward" ? outwardDocs[activeKey as keyof typeof outwardDocs] : null;
-  const inventoryDoc = activeSection === "Inventory" ? inventoryDocs[activeKey as keyof typeof inventoryDocs] : null;
-  const returnsDoc = activeSection === "Returns" ? returnsDocs[activeKey as keyof typeof returnsDocs] : null;
-const yardDoc = activeSection === "Yard Map" ? yardmapDocs[activeKey as keyof typeof yardmapDocs] : null;
-const scrapDoc = activeSection === "Scrap" ? scrapDocs[activeKey as keyof typeof scrapDocs] : null;
-const qualityDoc = activeSection === "Quality Checks" ? qualityDocs[activeKey as keyof typeof qualityDocs] : null;
-const auditDoc = activeSection === "Audit & Risk Register" ? auditDocs[activeKey as keyof typeof auditDocs] : null;
-const analyticsDoc = activeSection === "Analytics" ? analyticsDocs[activeKey as keyof typeof analyticsDocs] : null;
-const mastersDoc = activeSection === "Masters & Settings" ? mastersDocs[activeKey as keyof typeof mastersDocs] : null;
-
-useEffect(() => {
-  if (doc?.tabs?.length) {
-    setActiveDocTab((prev) => (doc.tabs.some((tab) => tab.tab === prev) ? prev : doc.tabs[0].tab));
-  } else {
-    setActiveDocTab(null);
-  }
-}, [doc?.tabs]);
-
-const dashboardSections = doc?.tabs
-  ? doc.tabs.find((tab) => tab.tab === activeDocTab)?.sections ?? []
-  : doc?.sections ?? [];
-
   type DocSection = {
     heading: string;
     content: string;
     image?: string;
     video?: string;
   };
+
+  type DocTab = {
+    tab: string;
+    sections: DocSection[];
+  };
+
+  type DashboardDoc = {
+    title: string;
+    description: string;
+    sections: DocSection[];
+    tabs?: DocTab[];
+  };
+
+  const doc =
+    activeSection === "Dashboard"
+      ? (dashboardDocs[activeKey as keyof typeof dashboardDocs] as DashboardDoc)
+      : null;
+  const inwardDoc = activeSection === "Inward" ? inwardDocs[activeKey as keyof typeof inwardDocs] : null;
+  const outwardDoc = activeSection === "Outward" ? outwardDocs[activeKey as keyof typeof outwardDocs] : null;
+  const inventoryDoc = activeSection === "Inventory" ? inventoryDocs[activeKey as keyof typeof inventoryDocs] : null;
+  const returnsDoc = activeSection === "Returns" ? returnsDocs[activeKey as keyof typeof returnsDocs] : null;
+  const yardDoc = activeSection === "Yard Map" ? yardmapDocs[activeKey as keyof typeof yardmapDocs] : null;
+  const scrapDoc = activeSection === "Scrap" ? scrapDocs[activeKey as keyof typeof scrapDocs] : null;
+  const qualityDoc = activeSection === "Quality Checks" ? qualityDocs[activeKey as keyof typeof qualityDocs] : null;
+  const auditDoc = activeSection === "Audit & Risk Register" ? auditDocs[activeKey as keyof typeof auditDocs] : null;
+  const analyticsDoc = activeSection === "Analytics" ? analyticsDocs[activeKey as keyof typeof analyticsDocs] : null;
+  const mastersDoc = activeSection === "Masters & Settings" ? mastersDocs[activeKey as keyof typeof mastersDocs] : null;
+
+  useEffect(() => {
+    if (doc?.tabs?.length) {
+      const tabs = doc.tabs;
+      setActiveDocTab((prev) =>
+        tabs.some((tab) => tab.tab === prev) ? prev : tabs[0].tab
+      );
+    } else {
+      setActiveDocTab(null);
+    }
+  }, [doc?.tabs]);
+
+  const dashboardSections = doc?.tabs
+    ? doc.tabs.find((tab) => tab.tab === activeDocTab)?.sections ?? []
+    : doc?.sections ?? [];
 
   const renderDocSections = (sections: DocSection[]) => (
     <div className="flex flex-col gap-6">
