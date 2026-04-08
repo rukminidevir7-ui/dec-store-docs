@@ -65,6 +65,12 @@ export default function Home() {
     tabs?: DocTab[];
   };
 
+  const isDashboardTabDoc = (
+    value: DashboardDoc | null
+  ): value is DashboardDoc & { tabs: DocTab[] } => {
+    return Boolean(value && Array.isArray(value.tabs));
+  };
+
   const doc =
     activeSection === "Dashboard"
       ? (dashboardDocs[activeKey as keyof typeof dashboardDocs] as DashboardDoc)
@@ -81,7 +87,7 @@ export default function Home() {
   const mastersDoc = activeSection === "Masters & Settings" ? mastersDocs[activeKey as keyof typeof mastersDocs] : null;
 
   useEffect(() => {
-    if (doc?.tabs?.length) {
+    if (isDashboardTabDoc(doc) && doc.tabs.length) {
       const tabs = doc.tabs;
       setActiveDocTab((prev) =>
         tabs.some((tab) => tab.tab === prev) ? prev : tabs[0].tab
@@ -89,9 +95,9 @@ export default function Home() {
     } else {
       setActiveDocTab(null);
     }
-  }, [doc?.tabs]);
+  }, [doc]);
 
-  const dashboardSections = doc?.tabs
+  const dashboardSections = isDashboardTabDoc(doc)
     ? doc.tabs.find((tab) => tab.tab === activeDocTab)?.sections ?? []
     : doc?.sections ?? [];
 
