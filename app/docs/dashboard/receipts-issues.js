@@ -6,12 +6,7 @@ const receiptsIssuesTabs = [
     tab: "Receipts & Quality Check",
 
     sections: [
-      {
-        heading: "Receipt Throughput",
-        content:
-          "This section provides a summary of all inward material activity. It includes total receipt documents, inward quantity, inward value, and accepted quantity after quality checks. Additional indicators such as rejected quantity, damaged quantity, short receipt quantity, and pending QC lots help track discrepancies and ensure accurate material intake.",
-        image: "/docs/receipts/receipt-throughput.png",
-      },
+      { heading: "Receipt Throughput", content: "This section provides a summary of all inward material activity. It includes total receipt documents, inward quantity, inward value, and accepted quantity after quality checks. Additional indicators such as rejected quantity, damaged quantity, short receipt quantity, and pending QC lots help track discrepancies and ensure accurate material intake.", image: "/docs/receipts/receipt-throughput.png", },
       {
         heading: "Quality & Compliance",
         content:

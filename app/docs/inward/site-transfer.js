@@ -1,23 +1,22 @@
 export const siteTransferDocs = {
   title: "From Site Transfer",
 
- description:
-    "MRN is used to record all materials received into the store from vendors or through site transfers. It ensures proper tracking, verification, and inventory updates for all inward materials.",
+//  description:
+//     "MRN is used to record all materials received into the store from vendors or through site transfers. It ensures proper tracking, verification, and inventory updates for all inward materials.",
 
   sections: [
-    {
-      heading: "Overview",
-      content:
-        "The MRN page displays a list of all inward entries including purchase receipts and site transfers. Users can search, filter, and track the status of each MRN. It provides complete visibility into received materials, vendors, quantities, and verification status.",
-      image: "/docs/inward/mrn-overview.png",
-    },
+   {
+  heading: "Overview",
+  content:
+    "The Transfer Receipts page displays all materials received from other sites, including project details, source site, material, quantity, reference number, and status. Users can search and track transfer records to ensure accurate stock movement and verification across sites.",
+  image: "/docs/inward/Transfer_Receipt.png",
+},
     
     {
-      heading: "Create New MRN",
-      content:
-        "Users can create a new Material Receipt Note by clicking the 'Create New MRN' button.",
-      video: "/docs/inward/Item_Master_video.mp4",
-    },
+  heading: "Add Transfer Receipt",
+  content: "Users can record materials received from another site by entering project details, source site, material, quantity, and destination yard.",
+  video: "/docs/inward/Transfer_Receipt_Video.mp4",
+},
 
     
   ],
