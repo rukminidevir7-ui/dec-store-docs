@@ -2,32 +2,14 @@ export const dashboardPageDocs = {
   title: "Dashboard Overview",
 
   description:
-    "The Dashboard provides a centralized view of store performance, including inventory insights, stock movement, and operational metrics.",
+    "The Dashboard Overview shows key store data including inventory status, stock movements, pending actions, and performance insights.\nIt helps users quickly monitor stock levels, identify risks, and track daily operations from a single screen.",
 
   sections: [
     {
-      heading: "Key Performance Indicators (KPIs)",
+      heading: "Dashboard Features",
       content:
-        "Displays important metrics such as total inventory value, inward and outward quantities, low stock alerts, and quality status to help users quickly understand system performance.",
-      image: "/docs/dashboard/overview-1.png",
-    },
-    {
-      heading: "Filters and Controls",
-      content:
-        "Users can filter dashboard data using date range, vendor, and category filters. A compact mode is also available for better visibility on smaller screens.",
-      image: "/docs/dashboard/overview-2.png",
-    },
-    {
-      heading: "Dashboard Tabs",
-      content:
-        "The dashboard is divided into multiple tabs including Store Summary, Receipts & Issues, Stock Control & Risks, Consumption & Performance, and Registers & Technical Checks for structured navigation.",
-      image: "/docs/dashboard/overview-3.png",
-    },
-    {
-      heading: "Operational Insights",
-      content:
-        "Provides real-time insights into inward and outward movements, stock levels, low stock alerts, quality checks, and material flow trends.",
-      image: "/docs/dashboard/overview-4.png",
+        "• Date range filter to view data for selected period\n• Vendor and category filters for quick analysis\n• Inventory Position showing total value, stock lines, active items, low stock, and out of stock\n• Daily Flow showing inward value, issue value, pending QC, and returnables\n• Stock Value by Category chart for category-wise analysis\n• Monthly Inward vs Issue vs Closing trend chart\n• Top 10 Items by Stock Value list\n• Stock Aging Buckets to track old inventory\n• Critical Stock Alerts for low stock monitoring\n• Pending Action Summary for quick tasks tracking",
+      image: "/docs/dashboard/dashboard-overview.png",
     },
   ],
 };
