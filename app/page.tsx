@@ -111,10 +111,12 @@ export default function Home() {
           className="bg-white p-5 rounded-[28px] shadow-sm border border-slate-200"
         >
           {sec.video ? (
-            <div className="grid gap-6 lg:grid-cols-[0.32fr_0.68fr] items-start">
+            <div className="grid gap-6 lg:grid-cols-[0.32fr_0.68fr] items-center">
               <div>
                 <h2 className="text-xl font-semibold mb-2">{sec.heading}</h2>
-                <p className="text-gray-600 leading-relaxed">{sec.content}</p>
+                <p className="text-gray-600 leading-relaxed whitespace-pre-line">
+    {sec.content}
+  </p>
               </div>
 
               <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-slate-950 shadow-sm">
@@ -133,8 +135,9 @@ export default function Home() {
             <div className="flex flex-col gap-4">
               <div>
                 <h2 className="text-xl font-semibold mb-2">{sec.heading}</h2>
-                <p className="text-gray-600 leading-relaxed">{sec.content}</p>
-              </div>
+<p className="text-gray-600 leading-relaxed whitespace-pre-line">
+    {sec.content}
+  </p>              </div>
 
               {sec.image && (
                 <img

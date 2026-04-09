@@ -1,23 +1,15 @@
 export const issueSlipDocs = {
   title: "Issue Slip",
 
-   description:
-    "MRN is used to record all materials received into the store from vendors or through site transfers. It ensures proper tracking, verification, and inventory updates for all inward materials.",
+  description:
+    "Issue Slip is used to issue materials against an indent or planned request.\nIt helps record project details, track material consumption, and ensure proper stock deduction from the selected yard.",
 
   sections: [
     {
-      heading: "Overview",
+      heading: "Issue Slip",
       content:
-        "The MRN page displays a list of all inward entries including purchase receipts and site transfers. Users can search, filter, and track the status of each MRN. It provides complete visibility into received materials, vendors, quantities, and verification status.",
-      image: "/docs/inward/mrn-overview.png",
+        "Steps:\n\n• Click Create Issue Slip\n• Select Issue Date\n• Select Project\n• Enter Indent / Request Reference\n• Enter Activity / Block\n• Enter Issued To\n• Select Issue Target\n• Add Material\n• Enter Quantity & Unit\n• Select Source Yard\n• Click Issue Materials",
+      video: "/docs/outward/Issue_slip_Video.mp4",
     },
-    
-    {
-      heading: "Create New MRN",
-      content:
-        "Users can create a new Material Receipt Note by clicking the 'Create New MRN' button.",
-      video: "/videos/inward.mp4",
-    },
-
   ],
 };

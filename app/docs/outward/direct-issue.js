@@ -1,24 +1,15 @@
 export const directIssueDocs = {
   title: "Direct Issue",
 
- description:
-    "MRN is used to record all materials received into the store from vendors or through site transfers. It ensures proper tracking, verification, and inventory updates for all inward materials.",
+  description:
+    "Direct Issue is used to issue materials immediately without an indent during emergency or urgent situations.\nIt helps record project details, reason for issue, recipient information, and ensures accurate stock deduction from the selected yard.",
 
   sections: [
     {
-      heading: "Overview",
+      heading: "Direct Issue",
       content:
-        "The MRN page displays a list of all inward entries including purchase receipts and site transfers. Users can search, filter, and track the status of each MRN. It provides complete visibility into received materials, vendors, quantities, and verification status.",
-      image: "/docs/inward/mrn-overview.png",
+        "Steps:\n\n• Click Add Direct Issue\n• Select Issue Date\n• Select Project\n• Select Reason for Issue\n• Enter Issued To\n• Enter Work / Location\n• Enter Physical Location\n• Enter Approval Reference\n• Select Issue Target\n• Add Material\n• Enter Quantity & Unit\n• Select Source Yard\n• Click Issue Materials",
+      video: "/docs/outward/Direct_Issue_Video.mp4",
     },
-    
-    {
-      heading: "Create New MRN",
-      content:
-        "Users can create a new Material Receipt Note by clicking the 'Create New MRN' button.",
-      video: "/docs/inward/Item_Master_video.mp4",
-    },
-
-    
   ],
 };
