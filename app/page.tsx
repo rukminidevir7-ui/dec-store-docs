@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import { motion } from "framer-motion";
-import { Menu, Search, LogOut, UserCircle2 } from "lucide-react";
+import { Search, LogOut, UserCircle2 } from "lucide-react";
 import { PlayCircle } from "lucide-react";
 
 /* ===== IMPORT DOCS ===== */
@@ -43,8 +43,17 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState("Dashboard");
   const [activeKey, setActiveKey] = useState("Dashboard");
   const [activeDocTab, setActiveDocTab] = useState<string | null>(null);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+
+  const mainScrollRef = useRef<HTMLElement>(null);
+  // ✅ ADD THIS EFFECT:
+  useEffect(() => {
+    if (mainScrollRef.current) {
+      mainScrollRef.current.scrollTop = 0;
+    }
+  }, [activeSection, activeKey, activeDocTab]);
 
   type DocSection = {
     heading: string;
@@ -211,8 +220,7 @@ export default function Home() {
           </div>
         </header>
 
-        <main className="flex-1 overflow-auto px-6 py-6 lg:px-8">
-
+<main ref={mainScrollRef} className="flex-1 overflow-auto px-6 py-6 lg:px-8">
         {/* ===== DASHBOARD DOCS ===== */}
         {activeSection === "Dashboard" && doc && (
           <div className="max-w-6xl mx-auto">
