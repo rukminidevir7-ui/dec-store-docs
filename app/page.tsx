@@ -116,6 +116,7 @@ export default function Home() {
           key={i}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
           className="bg-white p-5 rounded-[28px] shadow-sm border border-slate-200"
         >
           {sec.video ? (

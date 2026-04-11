@@ -28,5 +28,11 @@ export const bitumenDocs = {
 
        image: "/docs/inventory/categories/7.png",
     },
+    {
+  heading: "Add Tank",
+  content:
+    "Steps:\n\n• Click 'Add Tank'\n• Tank Name\n• Type\n• Unit\n• Capacity\n• Click 'Add Tank'",
+  video: "/docs/inventory/categories/add-tank-video.mp4",
+}
   ],
 };

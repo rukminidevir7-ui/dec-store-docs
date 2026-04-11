@@ -6,27 +6,8 @@ export const civilDocs = {
     {
       heading: "Civil Inventory Overview",
       content:
-        "This screen is used to manage and view civil-related materials in the system.\n\n" +
-
-        "• It will show all civil materials linked to projects and activities\n" +
-        "• Materials will be grouped based on category and usage\n" +
-        "• Each entry will include details like material name, vendor, and usage type\n\n" +
-
-        "When data is available:\n\n" +
-        "• You can track material movement and usage\n" +
-        "• Helps understand where materials are used\n" +
-        "• Useful for project tracking and reporting\n\n" +
-
-        "Current Status:\n\n" +
-        "• No data is available now\n" +
-        "• Once materials are added, this screen will display full details\n\n" +
-
-        "Overall:\n\n" +
-        "• Helps manage civil materials in one place\n" +
-        "• Supports better tracking and planning\n" +
-        "• Will become useful as data grows",
-
-      image: "/docs/inventory/materials/4.png",
+        "Civil Inventory displays category-wise material usage aligned with MRN records.\n\nPurpose:\n\n• Track materials used in civil works\n• Monitor category-wise inventory value\n• View purchase vs transfer entries\n• Maintain material usage records\n\nMain Elements:\n\n• Total Entries\n• Category Value\n• Purchase vs Transfer\n\nTable Fields:\n\n• MRN Ref\n• Date\n• Material\n• Vendor\n• Usage\n• Value\n• Type",
+      image: "/docs/inventory/materials/civil.png",
     },
   ],
 };

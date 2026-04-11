@@ -28,5 +28,11 @@ export const reservationsDocs = {
 
       image: "/docs/inventory/stocks/4.png",
     },
+    {
+  heading: "Create Reservation",
+  content:
+    "Steps:\n\n• Click 'New Reservation'\n• Reservation No (auto or manual)\n• Date\n• Project\n• Indent Ref\n• WBS\n• Material\n• Reserved Qty\n• Unit\n• Source Yard\n• Expiry / Valid Till\n• Remarks\n• Click 'Create Reservation'",
+  video: "/docs/inventory/stocks/create-reservation-video.mp4",
+}
   ],
 };
