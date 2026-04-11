@@ -122,7 +122,7 @@ export default function Home() {
           {sec.video ? (
             <div className="grid gap-6 lg:grid-cols-[0.32fr_0.68fr] items-center">
               <div>
-                <h2 className="text-xl font-semibold mb-2">{sec.heading}</h2>
+<h2 className="text-xl font-semibold mb-2 text-slate-900">{sec.heading}</h2>
                 <p className="text-gray-600 leading-relaxed whitespace-pre-line">
     {sec.content}
   </p>
@@ -172,15 +172,28 @@ export default function Home() {
   };
 
   return (
-    <div className="flex h-screen bg-slate-100">
-      <aside className={`${sidebarOpen ? "w-72" : "w-20"} border-r border-slate-200 bg-white shadow-sm transition-all duration-200`}>
-        <DocsSidebar
-          activeSection={activeSection}
-          activeKey={activeKey}
-          collapsed={!sidebarOpen}
-          onSelect={handleMenuClick}
-        />
-      </aside>
+    <div className="flex h-screen w-full bg-slate-100 overflow-hidden relative">
+  
+  {/* 📱 Mobile Backdrop Overlay: Clicking this closes the sidebar on phones */}
+  {sidebarOpen && (
+    <div 
+      className="fixed inset-0 z-40 bg-slate-900/20 backdrop-blur-sm md:hidden"
+      onClick={() => setSidebarOpen(false)}
+    />
+  )}
+
+  {/* Sidebar */}
+  <aside 
+    className={`fixed inset-y-0 left-0 z-50 md:relative h-full bg-white border-r border-slate-200 shadow-sm transition-all duration-300 
+    ${sidebarOpen ? "translate-x-0 w-72" : "-translate-x-full md:translate-x-0 md:w-20"}`}
+  >
+    <DocsSidebar
+      activeSection={activeSection}
+      activeKey={activeKey}
+      collapsed={!sidebarOpen}
+      onSelect={handleMenuClick}
+    />
+  </aside>
 
       <div className="flex-1 flex flex-col">
         <header className="flex items-center justify-between gap-4 bg-white px-6 py-4 border-b border-slate-200 shadow-sm">
@@ -223,7 +236,7 @@ export default function Home() {
         {activeSection === "Dashboard" && doc && (
           <div className="max-w-6xl mx-auto">
 
-            <h1 className="text-3xl font-bold mb-4">{doc.title}</h1>
+<h1 className="text-3xl font-bold mb-4 text-slate-900">{doc.title}</h1>
             <p className="text-gray-600 mb-6">{doc.description}</p>
 
            {doc.tabs && doc.tabs.length > 0 && (
