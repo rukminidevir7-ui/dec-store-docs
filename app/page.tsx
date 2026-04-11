@@ -226,24 +226,42 @@ export default function Home() {
             <h1 className="text-3xl font-bold mb-4">{doc.title}</h1>
             <p className="text-gray-600 mb-6">{doc.description}</p>
 
-            {doc.tabs && doc.tabs.length > 0 && (
-              <div className="mb-8 flex flex-wrap gap-2 border-b border-slate-200 pb-4">
-                {doc.tabs.map((tab) => (
-                  <button
-                    type="button"
-                    key={tab.tab}
-                    onClick={() => setActiveDocTab(tab.tab)}
-                    className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-                      activeDocTab === tab.tab
-                        ? "bg-purple-600 text-white shadow"
-                        : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                    }`}
-                  >
-                    {tab.tab}
-                  </button>
-                ))}
-              </div>
-            )}
+           {doc.tabs && doc.tabs.length > 0 && (
+  <>
+    {/* 📱 MOBILE VIEW: Dropdown (Select Box) */}
+    <div className="mb-8 block md:hidden">
+      <select
+        value={activeDocTab || ""}
+        onChange={(e) => setActiveDocTab(e.target.value)}
+        className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm outline-none transition focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
+      >
+        {doc.tabs.map((tab) => (
+          <option key={tab.tab} value={tab.tab}>
+            {tab.tab}
+          </option>
+        ))}
+      </select>
+    </div>
+
+    {/* 💻 DESKTOP VIEW: Normal Buttons */}
+    <div className="mb-8 hidden md:flex flex-wrap gap-2 border-b border-slate-200 pb-4">
+      {doc.tabs.map((tab) => (
+        <button
+          type="button"
+          key={tab.tab}
+          onClick={() => setActiveDocTab(tab.tab)}
+          className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+            activeDocTab === tab.tab
+              ? "bg-purple-600 text-white shadow"
+              : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+          }`}
+        >
+          {tab.tab}
+        </button>
+      ))}
+    </div>
+  </>
+)}
 
             {renderDocSections(dashboardSections)}
 
