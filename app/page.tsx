@@ -48,7 +48,6 @@ export default function Home() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
 
   const mainScrollRef = useRef<HTMLElement>(null);
-  // ✅ ADD THIS EFFECT:
   useEffect(() => {
     if (mainScrollRef.current) {
       mainScrollRef.current.scrollTop = 0;
@@ -162,13 +161,11 @@ export default function Home() {
   );
 
   const handleMenuClick = (data: { section: string; key: string | null }) => {
-    // ✅ HANDLE TOGGLE HERE
     if (data.section === "TOGGLE_SIDEBAR") {
       setSidebarOpen((prev) => !prev);
       return;
     }
 
-    // 👉 normal menu click
     setActiveSection(data.section);
     setActiveKey(data.key || "");
   };
